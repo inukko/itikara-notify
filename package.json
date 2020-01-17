@@ -3,20 +3,36 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "config": {
+    "name": "name"
+  },
   "scripts": {
     "dev": "ts-node ./src/index.ts",
     "dev:watch": "ts-node-dev --respawn ./src/index.ts",
-    "build": "webpack --mode development"
+    "build": "webpack --mode development",
+    "server": "json-server ./api/mock.json",
+    "deploy": "gcloud functions deploy $GFC_ENTRY_POINT --runtime $GFC_RUNTIME --trigger-resource $GFC_RESOURCE --trigger-event google.storage.object.finalize --memory $GFC_MEMORY"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
   "dependencies": {
+    "axios": "^0.19.1",
+    "moment-timezone": "^0.5.27"
+  },
+  "devDependencies": {
+    "@google-cloud/storage": "^4.2.0",
+    "@types/eslint": "^6.1.3",
     "@types/jest": "^24.0.25",
+    "@types/json-server": "^0.14.2",
     "@types/moment": "^2.13.0",
+    "@types/moment-timezone": "^0.5.12",
+    "@types/node": "^13.1.7",
+    "@types/watch": "^1.0.1",
+    "@types/webpack": "^4.41.2",
     "@typescript-eslint/eslint-plugin": "^2.15.0",
     "@typescript-eslint/parser": "^2.15.0",
+    "awesome-typescript-loader": "^5.2.1",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.20.0",
@@ -24,12 +40,11 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "jest": "^24.9.0",
+    "json-server": "^0.15.1",
     "ts-jest": "^24.3.0",
     "ts-node": "^8.6.1",
+    "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.7.4",
-    "awesome-typescript-loader": "^5.2.1",
-    "moment": "^2.24.0",
-    "watch": "^1.0.2",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5"
   }

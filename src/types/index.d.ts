@@ -1,1 +1,0 @@
-import "./declare/global.functions.d.ts";
