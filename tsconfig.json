@@ -7,7 +7,9 @@
     "lib": ["esnext"],
     "experimentalDecorators": true,
     "baseUrl": "./",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "target": "ES2019"
   },
   "include": ["./src/**/*"]
 }
