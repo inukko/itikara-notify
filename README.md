@@ -1,1 +1,1 @@
-# nijisanji-livebot
+# itikara-notify
